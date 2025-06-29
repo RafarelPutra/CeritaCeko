@@ -22,11 +22,10 @@
       user-select: none;
     }
 
-    /* Desain panel cerita dan musik sama */
     .panel, .music-panel {
       background-color: white;
       border: 2px solid black;
-      padding: 6px 15px; /* padding vertical dikurangi jadi 6px */
+      padding: 6px 15px;
       margin-bottom: 20px;
       box-shadow: 4px 4px black;
       width: 100%;
@@ -56,9 +55,8 @@
       user-select: none;
     }
 
-    /* Panel musik layout */
     .music-controls {
-      margin-top: 6px; /* jarak dikurangi */
+      margin-top: 6px;
       display: flex;
       justify-content: space-between;
       gap: 10px;
@@ -69,7 +67,7 @@
       background-color: transparent;
       border: none;
       font-family: 'Amatic SC', cursive;
-      font-size: 24px; /* diperkecil dari 28px */
+      font-size: 24px;
       cursor: pointer;
       padding: 0;
       user-select: none;
@@ -77,44 +75,41 @@
       transition: transform 0.15s ease;
     }
     .music-controls button.play-button {
-      font-size: 28px; /* diperkecil dari 32px */
+      font-size: 28px;
     }
     .music-controls button:hover {
       transform: scale(1.2);
       color: #555;
     }
 
-    /* Tombol navigasi */
     .bottom-nav-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
-}
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
 
-.bottom-nav-button {
-  background-color: black;
-  color: white;
-  font-size: 1.5em;
-  padding: 10px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: 'Amatic SC', cursive;
-  box-shadow: 2px 2px gray;
-  transition: background-color 0.2s ease;
-}
+    .bottom-nav-button {
+      background-color: black;
+      color: white;
+      font-size: 1.5em;
+      padding: 10px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: 'Amatic SC', cursive;
+      box-shadow: 2px 2px gray;
+      transition: background-color 0.2s ease;
+    }
 
-.bottom-nav-button:hover {
-  background-color: #333;
-}
+    .bottom-nav-button:hover {
+      background-color: #333;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Judul chapter 1 di atas panel musik -->
   <h1>Bonus Chapter: Untuk Rasa Dan Perasaannya</h1>
 
-  <!-- Panel musik dengan desain sama persis -->
   <div class="music-panel">
     <div class="music-text-top">Bacanya Sambil Dengerin Ini</div>
     <div class="music-controls">
@@ -127,7 +122,6 @@
     </div>
   </div>
 
-  <!-- Panel cerita manga -->
   <div class="panel">
     <div class="caption">Sampai detik komik ini dirilis... dia masih belum tahu kalau aku mencintainya. Tapi siapa tahu, pas baca ini, dia sadar. Atau pura-pura gak tahu, juga gak apa-apa.</div>
     <img src="C7P1.png" alt="Gerbang Sekolah" />
@@ -136,11 +130,10 @@
   <div class="panel">
     <div class="caption">Aku gak berharap apa-apa. Cuma... kalau Tuhan izinkan, tolong ya Tuhan, kasih tahu dia pelan-pelan, bahwa cerita ini tentang dia.</div>
     <img src="C7P2.png" alt="Gadis Berjalan" />
-    </div>
+  </div>
 
   <div class="panel">
-    <div class="caption">Kalau kamu sadar ini tentang kamu...
-    terima kasih. Bukan karena kamu sempurna. Tapi karena kamu bisa bikin aku mau jadi lebih baik tanpa maksa.</div>
+    <div class="caption">Kalau kamu sadar ini tentang kamu... terima kasih. Bukan karena kamu sempurna. Tapi karena kamu bisa bikin aku mau jadi lebih baik tanpa maksa.</div>
     <img src="C7P3.png" alt="Tatapan Mata" />
   </div>
 
@@ -158,24 +151,21 @@
     <div class="caption">Dan satu hal lagi...</div>
     <img src="C7P6.png" alt="Harapan" />
   </div>
-  
-   <div class="panel">
-    <div class="caption">Dimanapun kamu berada nanti, percayalah...
-Aku bakal nyari kamu.</div>
+
+  <div class="panel">
+    <div class="caption">Dimanapun kamu berada nanti, percayalah... Aku bakal nyari kamu.</div>
     <img src="C7P7.png" alt="Harapan" />
   </div>
-  
-   <div class="panel">
-    <div class="caption">Demi melaksanakan takdir Tuhan... yang udah ditulis untuk kita.
-Untuk</div>
-<div class="caption">"Our Future Destiny."</div>
+
+  <div class="panel">
+    <div class="caption">Demi melaksanakan takdir Tuhan... yang udah ditulis untuk kita. Untuk</div>
+    <div class="caption">"Our Future Destiny."</div>
     <img src="C7P8.png" alt="Harapan" />
   </div>
 
-  <!-- Tombol Navigasi Tengah Bawah -->
-<div class="bottom-nav-container">
-  <a href="KP.html" class="bottom-nav-button">Ini Beneran Selesai</a>
-</div>
+  <div class="bottom-nav-container">
+    <a href="KP.html" class="bottom-nav-button">Ini Beneran Selesai</a>
+  </div>
 
   <script>
     const audio = document.getElementById('audio');
@@ -184,10 +174,8 @@ Untuk</div>
     function togglePlay() {
       if (audio.paused) {
         audio.play();
-        playBtn.textContent = '❚❚';
       } else {
         audio.pause();
-        playBtn.textContent = '▶';
       }
     }
 
@@ -207,8 +195,30 @@ Untuk</div>
       }
     }
 
+    // Sinkronisasi tombol play/pause
+    audio.addEventListener('play', () => {
+      playBtn.textContent = '❚❚';
+    });
+
+    audio.addEventListener('pause', () => {
+      playBtn.textContent = '▶';
+    });
+
     audio.addEventListener('ended', () => {
       playBtn.textContent = '▶';
+    });
+
+    // Autoplay saat halaman dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          playBtn.textContent = '❚❚';
+        }).catch((error) => {
+          console.warn('Autoplay gagal: ', error);
+          playBtn.textContent = '▶';
+        });
+      }
     });
   </script>
 
