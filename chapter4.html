@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 4 -Langkah Pertama Setelah Rindu</title>
+  <title>Chapter 4 - Langkah Pertama Setelah Rindu</title>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -15,6 +15,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     h1 {
       text-align: center;
       font-size: 2.5em;
@@ -22,11 +23,10 @@
       user-select: none;
     }
 
-    /* Desain panel cerita dan musik sama */
     .panel, .music-panel {
       background-color: white;
       border: 2px solid black;
-      padding: 6px 15px; /* padding vertical dikurangi jadi 6px */
+      padding: 6px 15px;
       margin-bottom: 20px;
       box-shadow: 4px 4px black;
       width: 100%;
@@ -56,9 +56,8 @@
       user-select: none;
     }
 
-    /* Panel musik layout */
     .music-controls {
-      margin-top: 6px; /* jarak dikurangi */
+      margin-top: 6px;
       display: flex;
       justify-content: space-between;
       gap: 10px;
@@ -69,22 +68,23 @@
       background-color: transparent;
       border: none;
       font-family: 'Amatic SC', cursive;
-      font-size: 24px; /* diperkecil dari 28px */
+      font-size: 24px;
       cursor: pointer;
       padding: 0;
       user-select: none;
       color: black;
       transition: transform 0.15s ease;
     }
+
     .music-controls button.play-button {
-      font-size: 28px; /* diperkecil dari 32px */
+      font-size: 28px;
     }
+
     .music-controls button:hover {
       transform: scale(1.2);
       color: #555;
     }
 
-    /* Tombol navigasi */
     .nav-buttons {
       display: flex;
       justify-content: space-between;
@@ -92,6 +92,7 @@
       margin-bottom: 20px;
       user-select: none;
     }
+
     .nav-buttons a {
       text-decoration: none;
       background-color: black;
@@ -99,8 +100,8 @@
       padding: 10px 20px;
       border-radius: 5px;
       box-shadow: 2px 2px gray;
-      user-select: none;
     }
+
     .nav-buttons a:hover {
       background-color: #333;
     }
@@ -108,14 +109,12 @@
 </head>
 <body>
 
-  <!-- Judul chapter 1 di atas panel musik -->
   <h1>Chapter 4: Langkah Pertama Setelah Rindu</h1>
 
-  <!-- Panel musik dengan desain sama persis -->
   <div class="music-panel">
     <div class="music-text-top">Bacanya Sambil Dengerin Ini</div>
     <div class="music-controls">
-      <audio id="audio" src="SC4.mp3"></audio>
+      <audio id="audio" src="SC4.mp3" autoplay muted></audio>
       <button onclick="restartAudio()" title="Restart Audio">⟲</button>
       <button onclick="rewind()" title="Rewind 5 detik">↺</button>
       <button onclick="togglePlay()" id="playBtn" class="play-button" title="Play/Pause">▶</button>
@@ -124,7 +123,7 @@
     </div>
   </div>
 
-  <!-- Panel cerita manga -->
+  <!-- Panel cerita manga (tidak diubah) -->
   <div class="panel">
       <div class="caption"> 25 November 2024</div>
     <div class="caption">Aku udah di rumah. Rasanya kayak balik ke kehidupan lama... tapi satu hal yang bikin deg-degan: besok hari Senin.</div>
@@ -170,8 +169,8 @@
     <div class="caption">Sebenarnya aku pengen bilang... di acara perpisahan nanti. Tapi tiap kali mikir gitu, ada suara kecil di kepala bilang: “Jangan. Belum waktunya.”</div>
     <img src="C4P9.png" alt="Panel 7" />
   </div>
+  <!-- Panel konten kamu tetap sesuai -->
 
-  <!-- Tombol navigasi -->
   <div class="nav-buttons">
     <a href="chapter3.html" title="Chapter Sebelumnya">← Chapter Sebelumnya</a>
     <a href="chapter5.html" title="Chapter Selanjutnya">Chapter Selanjutnya →</a>
@@ -184,10 +183,8 @@
     function togglePlay() {
       if (audio.paused) {
         audio.play();
-        playBtn.textContent = '❚❚';
       } else {
         audio.pause();
-        playBtn.textContent = '▶';
       }
     }
 
@@ -207,8 +204,33 @@
       }
     }
 
+    // Update tampilan tombol sesuai status audio
+    audio.addEventListener('play', () => {
+      playBtn.textContent = '❚❚';
+    });
+
+    audio.addEventListener('pause', () => {
+      playBtn.textContent = '▶';
+    });
+
     audio.addEventListener('ended', () => {
       playBtn.textContent = '▶';
+    });
+
+    // Autoplay saat halaman siap, unmute audio
+    window.addEventListener('DOMContentLoaded', () => {
+      audio.muted = false;
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise
+          .then(() => {
+            playBtn.textContent = '❚❚';
+          })
+          .catch((error) => {
+            console.warn("Autoplay gagal:", error);
+            playBtn.textContent = '▶';
+          });
+      }
     });
   </script>
 
