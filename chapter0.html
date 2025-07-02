@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FUTURE DESTINY</title>
 
-  <!-- Font Jepang Elegan & Romantis -->
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <!-- Font Jepang & Patrick Hand -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&family=Kosugi+Maru&family=M+PLUS+Rounded+1c&family=Patrick+Hand&display=swap" rel="stylesheet">
 
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     html, body {
       height: 100%;
       width: 100%;
-      background: url('GS.png') no-repeat center center/cover;
+      background: url('FD.png') no-repeat center center/cover;
       font-family: 'M PLUS Rounded 1c', sans-serif;
       display: flex;
       flex-direction: column;
@@ -29,7 +31,8 @@
 
     .overlay {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
@@ -48,14 +51,14 @@
     }
 
     h1.title {
-      font-family: 'Shippori Mincho B1', serif;
-      font-weight: 600;
-      font-size: 8.2vw;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 12.6vw;
       background: linear-gradient(90deg, #a6caff, #ffffff);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
       margin-bottom: 1rem;
     }
 
@@ -102,15 +105,14 @@
     }
   </style>
 </head>
+
 <body>
   <div class="overlay"></div>
-
   <div class="content">
     <h1 class="title">FUTURE DESTINY</h1>
     <p class="epilog">"Kalau Cinta Itu Bisa Bicara, Aku Udah Ngomong Sama Kamu Dari Dulu"</p>
     <a class="start-btn" onclick="goToChapter()">Mulai</a>
   </div>
-
   <p class="credit">Created by: Creespho Rafarel Putra</p>
 
   <script>
