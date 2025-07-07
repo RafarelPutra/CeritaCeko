@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chapter 1 - Aku Dan Senyuman Itu</title>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet" />
+
+  <!-- Audio seawal mungkin -->
+  <audio id="audio" src="SC1.mp3" autoplay muted preload="auto"></audio>
+
   <style>
+    /* [CSS kamu tetap sama, tidak perlu diubah] */
     body {
       background-color: #f4f4f4;
       font-family: 'Amatic SC', cursive;
@@ -45,15 +50,6 @@
       margin-top: 10px;
       user-select: none;
       text-align: center;
-    }
-
-    .sound-effect {
-      font-weight: bold;
-      font-size: 1.3em;
-      color: #555;
-      font-style: italic;
-      margin-top: 5px;
-      user-select: none;
     }
 
     .music-controls {
@@ -113,7 +109,6 @@
   <div class="music-panel">
     <div class="music-text-top">Bacanya Sambil Dengerin Ini</div>
     <div class="music-controls">
-      <audio id="audio" src="SC1.mp3" autoplay muted></audio>
       <button onclick="restartAudio()" title="Restart Audio">⟲</button>
       <button onclick="rewind()" title="Rewind 5 detik">↺</button>
       <button onclick="togglePlay()" id="playBtn" class="play-button" title="Play/Pause">▶</button>
@@ -124,7 +119,7 @@
 
   <!-- Panel cerita -->
   <div class="panel">
-      <div class="caption"> 8 Desember 2023</div>
+    <div class="caption">8 Desember 2023</div>
     <div class="caption">Pagi itu sekolah seperti biasa. Tapi yang duduk di depan gerbang itu, nggak biasa.</div>
     <img src="C1P1.png" alt="Gerbang Sekolah" />
   </div>
@@ -132,7 +127,7 @@
   <div class="panel">
     <div class="caption">Aku nggak tau dia lagi nunggu siapa. Tapi anehnya, aku ngerasa... kayaknya aku yang ditunggu.</div>
     <img src="C1P2.png" alt="Gadis Berjalan" />
-    </div>
+  </div>
 
   <div class="panel">
     <div class="caption">Dia nggak ngapa-ngapain, cuma duduk aja. Tapi cukup bikin hatiku ribut, kayak habis diajak balapan lari tanpa pemanasan.</div>
@@ -192,7 +187,7 @@
       }
     }
 
-    // Sinkron tombol saat status audio berubah
+    // Update tombol saat status berubah
     audio.addEventListener('play', () => {
       playBtn.textContent = '❚❚';
     });
@@ -205,17 +200,16 @@
       playBtn.textContent = '▶';
     });
 
-    // Autoplay saat halaman selesai dimuat
+    // Unmute dan play secepatnya saat halaman siap
     window.addEventListener('DOMContentLoaded', () => {
       audio.muted = false;
-      const promise = audio.play();
-      if (promise !== undefined) {
-        promise.catch((error) => {
-          console.warn('Autoplay gagal:', error);
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.warn("Autoplay gagal:", error);
         });
       }
     });
   </script>
-
 </body>
 </html>
