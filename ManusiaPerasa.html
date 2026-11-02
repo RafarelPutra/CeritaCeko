@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAFAF1">
+
+<title>Manusia-Manusia Perasa | Rafarel Putra</title>
+
+<style>
+:root {
+  --green: #225544;
+  --blue: #5B9D98;
+  --ivory: #FAFAF1;
+  --white: #ffffff;
+  --text: #344b42;
+  --muted: #75857c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,250,241,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(34,85,68,.12);
+}
+
+nav {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding: 75px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(91,157,152,.12);
+  top: -170px;
+  left: -120px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 65px;
+  position: relative;
+}
+
+.subtitle {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  color: var(--green);
+  font-size: clamp(42px, 5.5vw, 76px);
+  line-height: 1.08;
+  margin: 22px 0;
+}
+
+.hero h1 em {
+  color: var(--blue);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 520px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 13px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: .3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.cover-box {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+}
+
+.cover-box img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 20px 45px rgba(34,85,68,.18);
+}
+
+.cover-caption {
+  position: absolute;
+  bottom: 25px;
+  left: -25px;
+  background: white;
+  color: var(--green);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+/* GENERAL SECTION */
+
+section {
+  padding: 90px 0;
+}
+
+.section-label {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.section-desc {
+  color: var(--muted);
+  max-width: 650px;
+}
+
+/* ABOUT */
+
+.about {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.quote-box {
+  background: var(--green);
+  color: var(--ivory);
+  padding: 40px;
+  border-radius: 20px 20px 65px 20px;
+}
+
+.quote-box span {
+  font-size: 70px;
+  color: #9dc9bd;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote-box p {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+.about-text p {
+  margin-top: 15px;
+  color: var(--muted);
+}
+
+/* THEMES */
+
+.themes {
+  background: rgba(91,157,152,.12);
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.theme-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 18px;
+  transition: .3s;
+}
+
+.theme-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(34,85,68,.10);
+}
+
+.theme-card span {
+  color: var(--blue);
+  font-size: 25px;
+  font-family: Georgia, serif;
+}
+
+.theme-card h3 {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 23px;
+  margin: 15px 0 10px;
+}
+
+.theme-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CHARACTER */
+
+.character {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.character-art {
+  min-height: 350px;
+  border-radius: 180px 180px 20px 20px;
+  background: #e5efeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-art span {
+  font-family: Georgia, serif;
+  font-size: 130px;
+  font-style: italic;
+  color: var(--green);
+}
+
+.character-text p {
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+/* AUTHOR */
+
+.author-box {
+  padding: 45px;
+  border: 1px solid rgba(34,85,68,.15);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background: rgba(255,255,255,.45);
+}
+
+.author-box p {
+  max-width: 650px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.author-name {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 25px;
+  white-space: nowrap;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid rgba(34,85,68,.15);
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .hero-content {
+    gap: 35px;
+  }
+
+  .about,
+  .character {
+    gap: 35px;
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .container {
+    width: 88%;
+  }
+
+  nav {
+    height: 65px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--ivory);
+    padding: 20px 6%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    border-bottom: 1px solid rgba(34,85,68,.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    padding: 65px 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 11vw, 55px);
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .cover-box {
+    max-width: 320px;
+  }
+
+  .cover-caption {
+    left: -10px;
+    font-size: 13px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .about,
+  .character {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .quote-box {
+    padding: 30px;
+  }
+
+  .quote-box p {
+    font-size: 22px;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-card {
+    padding: 25px;
+  }
+
+  .character-art {
+    min-height: 270px;
+  }
+
+  .character-art span {
+    font-size: 100px;
+  }
+
+  .author-box {
+    padding: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-name {
+    font-size: 22px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+}
+
+/* HP KECIL */
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+}
+
+
+/* BACA CERITA */
+
+.read-section {
+  padding: 65px 0 90px;
+}
+
+.read-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
+  color: var(--ivory);
+  padding: 55px 35px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.read-panel::before,
+.read-panel::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(250,250,241,.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.read-panel::before {
+  width: 230px;
+  height: 230px;
+  top: -130px;
+  left: -70px;
+}
+
+.read-panel::after {
+  width: 300px;
+  height: 300px;
+  bottom: -200px;
+  right: -80px;
+}
+
+.read-panel h2 {
+  position: relative;
+  color: var(--ivory);
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 12px 0;
+}
+
+.read-panel p {
+  position: relative;
+  max-width: 530px;
+  margin: 0 auto 25px;
+  color: rgba(250,250,241,.8);
+  font-size: 14px;
+}
+
+.read-icon {
+  position: relative;
+  font-size: 38px;
+}
+
+.read-button {
+  position: relative;
+  display: inline-block;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 30px;
+  background: var(--ivory);
+  color: var(--green);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.read-button:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* POPUP */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(15,35,28,.65);
+  backdrop-filter: blur(7px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  background: var(--ivory);
+  padding: 38px 30px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 20px 70px rgba(0,0,0,.2);
+  animation: popupShow .25s ease;
+}
+
+@keyframes popupShow {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  border: none;
+  background: transparent;
+  color: var(--green);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.modal-content h3 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.code-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(34,85,68,.25);
+  border-radius: 12px;
+  background: white;
+  color: var(--green);
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 4px;
+  outline: none;
+  transition: .3s;
+}
+
+.code-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(91,157,152,.15);
+}
+
+.code-input::placeholder {
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.code-info {
+  font-size: 12px !important;
+  margin: 10px 0 18px !important;
+}
+
+.modal-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.modal-button:disabled {
+  background: #aab8b0;
+  cursor: not-allowed;
+}
+
+.modal-button:not(:disabled):hover {
+  background: var(--blue);
+}
+
+.error-message {
+  color: #bd5147 !important;
+  font-size: 12px !important;
+  margin: 10px 0 !important;
+  min-height: 18px;
+}
+
+.drive-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.drive-button:hover {
+  background: var(--blue);
+}
+
+.drive-note {
+  margin-top: 15px !important;
+  font-size: 12px !important;
+}
+
+/* RESPONSIVE POPUP */
+
+@media (max-width: 650px) {
+  .read-section {
+    padding: 45px 0 65px;
+  }
+
+  .read-panel {
+    padding: 45px 22px;
+    border-radius: 20px;
+  }
+
+  .modal-content {
+    padding: 35px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+
+    <a href="#home" class="logo">
+      CERITA CEKO<span></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-label="Buka menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Novel</a>
+      <a href="#themes">Perasaan</a>
+      <a href="#character">Tokoh</a>
+      <a href="#author">Penulis</a>
+      <a href="#baca-cerita">Baca Cerita</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+
+    <div>
+      <span class="subtitle">
+        Sebuah cerita tentang menjadi manusia
+      </span>
+
+      <h1>
+        Manusia-Manusia
+        <em>Perasa,</em>
+        Ciptaan Tuhan
+      </h1>
+
+      <p>
+        Tentang manusia yang tak pernah selesai memahami dirinya sendiri.
+        Tentang luka yang mengajarkan, bahagia yang terkadang terlupa, dan segala rasa yang membuat kita bertanya,
+        mengapa Tuhan menghadirkan begitu banyak perasaan dalam kehidupan?
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">
+          Jelajahi Cerita ↗
+        </a>
+
+        <a href="#author" class="btn btn-outline">
+          Tentang Penulis
+        </a>
+      </div>
+    </div>
+
+    <div class="cover-box">
+      <img src="MP.png"
+        alt="Cover Manusia-Manusia Perasa, Ciptaan Tuhan">
+
+      <div class="MP.png">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about">
+
+    <div class="quote-box">
+      <span>“</span>
+      <p>
+        Barangkali, dengan memahami setiap rasa yang singgah, manusia perlahan belajar memahami arti kehidupan.
+      </p>
+    </div>
+
+    <div class="about-text">
+      <span class="section-label">Tentang Novel</span>
+
+      <h2 class="section-title">
+        Di antara rasa dan makna.
+      </h2>
+
+      <p>
+        Fiksa Ganistha ingin memahami satu hal. Yaitu, mengapa Tuhan menciptakan begitu banyak perasaan, jika manusia sendiri terkadang kesulitan memahami apa yang sedang dirasakannya?.
+      </p>
+
+      <p>
+        Bagaimana tidak? Ada begitu banyak rasa yang datang silih berganti, meninggalkan cerita yang berbeda-beda. Ada yang membuatnya bahagia, ada yang mengajarkannya tentang kehilangan, dan ada pula yang membuatnya bertanya-tanya tentang alasan di balik semua yang terjadi.
+      </p>
+
+      <p>
+        Namun, semakin jauh ia mencoba memahami rasa sakit yang selama ini memenuhi pikirannya, semakin ia menyadari bahwa ada banyak kebahagiaan yang luput dari pandangannya. Barangkali, ia terlalu sibuk mencari alasan di balik luka, sampai lupa memperhatikan hal-hal sederhana yang diam-diam membuat hidupnya berharga.
+      </p>
+      
+      <p>
+          Melalui pertemuan, pengalaman, dan segala kejadian yang tak pernah ia duga, Fiksa perlahan belajar mengenali dirinya sendiri. Sebab, semakin banyak rasa yang ia temui, semakin banyak pula hal yang harus ia pahami.
+      </p>
+      
+      <p>
+          Pada akhirnya, ia mulai mengerti bahwa mungkin Tuhan tidak menciptakan perasaan untuk selalu dimengerti manusia, melainkan agar manusia belajar mengenal kehidupan melalui setiap rasa yang pernah singgah di dalam dirinya.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="themes" id="themes">
+  <div class="container">
+
+    <span class="section-label">Ruang Perasaan</span>
+
+    <h2 class="section-title">
+      Manusia, dengan segala rasanya.
+    </h2>
+
+    <p class="section-desc">
+      Tiga ruang perjalanan, tempat manusia mengenal berbagai rasa, menemukan cerita, dan perlahan memahami arti kehidupan.
+    </p>
+
+    <div class="theme-grid">
+
+      <div class="theme-card">
+        <span>01</span>
+        <h3>Mengenali Diri</h3>
+        <p>
+          Terkadang, memahami apa yang dirasakan sendiri jauh lebih sulit daripada memahami perasaan orang lain. Ada begitu banyak rasa yang singgah, tetapi tak semuanya mampu kita beri nama.
+        </p>
+      </div>
+
+      <div class="theme-card">
+        <span>02</span>
+        <h3>Menerima Kehidupan</h3>
+        <p>
+          Kehidupan tidak hanya menghadirkan hal-hal yang ingin kita kenang. Ada pertemuan yang berakhir menjadi kenangan, ada harapan yang tak menemukan jalannya, dan ada kenyataan yang harus diterima meski tak pernah kita inginkan.
+        </p>
+      </div>
+
+      <div class="theme-card">
+        <span>03</span>
+        <h3>Mencari Makna</h3>
+        <p>
+          Semakin jauh manusia mencari jawaban, semakin banyak pula pertanyaan yang ditemukannya. Mengapa sebuah perasaan hadir, apa yang ingin disampaikannya, dan untuk apa semua itu menjadi bagian dari kehidupan?
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTER -->
+<section id="character">
+  <div class="container character">
+
+    <div class="character-art">
+      <span>F.</span>
+    </div>
+
+    <div class="character-text">
+      <span class="section-label">Tokoh Utama</span>
+
+      <h2 class="section-title">
+        Fiksa Ganistha
+      </h2>
+
+      <p>
+        Fiksa Ganistha adalah seseorang yang mencoba memahami dunia melalui perasaan. Ada begitu banyak hal yang ingin ia mengerti, terutama tentang mengapa Tuhan menciptakan manusia dengan kemampuan untuk merasakan begitu banyak hal, jika tidak semuanya dapat dipahami dengan mudah.
+      </p>
+
+      <p>
+        Baginya, setiap perasaan menyimpan ceritanya sendiri. Ada yang datang membawa kebahagiaan, ada yang meninggalkan pertanyaan, dan ada pula yang membuatnya memandang kehidupan dari sisi yang berbeda.
+      </p>
+      
+      <p>
+          Namun, perjalanan Fiksa bukan tentang mencari cara agar ia tak lagi merasakan apa-apa. Sebab, semakin jauh ia mencoba memahami perasaannya, semakin ia menyadari bahwa menjadi manusia berarti belajar menerima segala rasa yang hadir, bahkan ketika ia belum menemukan alasan di baliknya.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section id="author">
+  <div class="container">
+
+    <div class="author-box">
+
+      <div>
+        <span class="section-label">Di Balik Cerita</span>
+
+        <h2 class="section-title">
+          Tentang Penulis
+        </h2>
+
+        <p>
+          Saya selalu bertanya-tanya, mengapa manusia diciptakan dengan begitu banyak perasaan? Mengapa ada kebahagiaan yang ingin terus dirasakan, tetapi ada pula kesedihan yang terkadang begitu sulit untuk diterima?
+          </p>
+          
+          <p>
+Barangkali, pertanyaan-pertanyaan sederhana itulah yang membuat saya ingin menulis buku ini. Saya ingin memahami lebih jauh tentang manusia, tentang segala rasa yang sering kali datang tanpa diminta, dan tentang alasan Tuhan menghadirkan semuanya dalam kehidupan.
+        </p>
+        
+        <p>
+            Melalui Manusia-Manusia Perasa, Ciptaan Tuhan, saya mencoba menuangkan berbagai pertanyaan tersebut ke dalam sebuah cerita. Bukan karena saya telah menemukan semua jawabannya, melainkan karena saya percaya bahwa ada banyak hal yang baru bisa kita pahami setelah berani melihat lebih dekat apa yang selama ini kita rasakan.
+            </p>
+            
+            <p>
+Sebab, saya pun masih belajar memahami kehidupan. Dan mungkin, buku ini adalah salah satu cara saya untuk mencari tahu mengapa menjadi manusia berarti merasakan begitu banyak hal.
+        </p>
+      </div>
+
+      <div class="author-name">
+        Rafarel Putra
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BACA CERITA -->
+<section class="read-section" id="baca-cerita">
+  <div class="container">
+
+    <div class="read-panel">
+
+      <div class="read-icon">📖</div>
+
+      <h2>Baca Cerita</h2>
+
+      <p>
+        Setiap halaman menyimpan rasa, setiap cerita menyimpan makna. Barangkali, ada perasaan yang pernah kau kenali di antara kisah Fiksa. Mari menyelami perjalanannya dan temukan apa yang mungkin selama ini luput dari pemahamanmu.
+      </p>
+
+      <button class="read-button" id="openModal">
+        Mulai Membaca ↗
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- POPUP KODE PERASA -->
+<div class="modal" id="readModal">
+
+  <div class="modal-content">
+
+    <button class="modal-close"
+      id="closeModal"
+      aria-label="Tutup pop-up">
+      &times;
+    </button>
+
+    <!-- TAHAP 1: INPUT KODE -->
+    <div id="codePage">
+
+      <div class="modal-icon">✦</div>
+
+      <h3>Kode Perasa</h3>
+
+      <p>
+        Sebelum melangkah lebih jauh, masukkan kode perasa untuk membuka lembar berikutnya dari perjalanan ini.
+      </p>
+
+      <input
+        type="text"
+        id="feelingCode"
+        class="code-input"
+        placeholder="Masukkan kode perasa"
+        inputmode="numeric"
+        autocomplete="off"
+        maxlength="15"
+        aria-label="Kode perasa">
+
+      <p class="code-info">
+      </p>
+
+      <p class="error-message" id="codeError"
+        role="alert"></p>
+
+      <button
+        class="modal-button"
+        id="continueButton"
+        disabled>
+        Lanjut →
+      </button>
+
+    </div>
+
+    <!-- TAHAP 2: AKSES E-BOOK -->
+    <div id="ebookPage" hidden>
+
+      <div class="modal-icon">📚</div>
+
+      <h3>Selamat Datang!</h3>
+
+      <p>
+        Kode perasa telah diterima. Kini, satu lembar perjalanan telah terbuka. Silakan lanjutkan, dan temukan cerita yang menanti di dalamnya.
+      </p>
+
+      <a
+        href="https://drive.google.com/drive/folders/1Ao5MJq3EEHV5k3NHo0UJuqcZNM9kwNBo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="drive-button">
+        Baca cerita ↗
+      </a>
+
+      
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <strong>Manusia-Manusia Perasa, Ciptaan Tuhan</strong>
+
+    <span>
+      <span id="year"></span> Rafarel Putra
+    </span>
+  </div>
+</footer>
+
+<script>
+
+// MENU NAVIGASI HP
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+  const opened = navLinks.classList.toggle("active");
+
+  menuBtn.textContent = opened ? "✕" : "☰";
+  menuBtn.setAttribute("aria-expanded", opened);
+});
+
+// TUTUP MENU SETELAH MEMILIH HALAMAN
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", function() {
+    navLinks.classList.remove("active");
+    menuBtn.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+// TAHUN OTOMATIS
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+// POPUP BACA CERITA
+
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
+const readModal = document.getElementById("readModal");
+
+const feelingCode = document.getElementById("feelingCode");
+const continueButton = document.getElementById("continueButton");
+const codeError = document.getElementById("codeError");
+
+const codePage = document.getElementById("codePage");
+const ebookPage = document.getElementById("ebookPage");
+
+// BUKA POPUP
+openModal.addEventListener("click", () => {
+  readModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+});
+
+// TUTUP POPUP
+function closeReadModal() {
+  readModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+closeModal.addEventListener("click", closeReadModal);
+
+// TUTUP KETIKA AREA LUAR POPUP DIKLIK
+readModal.addEventListener("click", (event) => {
+  if (event.target === readModal) {
+    closeReadModal();
+  }
+});
+
+// TUTUP DENGAN TOMBOL ESCAPE
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeReadModal();
+  }
+});
+
+// HANYA MENERIMA ANGKA
+feelingCode.addEventListener("input", () => {
+
+  feelingCode.value = feelingCode.value
+    .replace(/[^0-9]/g, "")
+    .slice(0, 15);
+
+  const codeLength = feelingCode.value.length;
+
+  continueButton.disabled =
+    codeLength < 7 || codeLength > 15;
+
+  codeError.textContent = "";
+
+});
+
+// LANJUT KE E-BOOK
+continueButton.addEventListener("click", () => {
+
+  const code = feelingCode.value;
+
+  if (!/^[0-9]{7,15}$/.test(code)) {
+    codeError.textContent =
+      "Kode harus terdiri dari 7 sampai 15 angka.";
+
+    return;
+  }
+
+  codePage.hidden = true;
+  ebookPage.hidden = false;
+
+});
+
+// TAHUN OTOMATIS
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+  
+
+</script>
+
+</body>
+</html>
