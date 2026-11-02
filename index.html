@@ -6,7 +6,7 @@
   <title>Cerita Ceko</title>
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pacifico&family=Roboto:wght@400;700&family=Satisfy&family=Handlee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -110,15 +110,14 @@
     }
 
     .story-title {
-      font-family: 'Satisfy', cursive;
       font-size: 24px;
+      font-weight: bold;
       margin-bottom: 6px;
     }
 
     .story-epilog {
-      font-family: 'Handlee', cursive;
       font-size: 14px;
-      line-height: 1.2;
+      line-height: 1.4;
     }
 
     /* Panel 1: Future Destiny */
@@ -144,6 +143,19 @@
 
     .panel-cesyandika .story-title,
     .panel-cesyandika .story-epilog {
+      color: #fff;
+    }
+
+    /* Panel 3: Hijau muda yang tenang */
+    .panel-green {
+      background-color: #5B9D98;
+      font-family: 'Patrick Hand', cursive;
+      color: #fff;
+      border-color: #225544;
+    }
+
+    .panel-green .story-title,
+    .panel-green .story-epilog {
       color: #fff;
     }
 
@@ -175,7 +187,7 @@
 
       <!-- Panel 1 -->
       <a class="story-panel panel-destiny" href="chapter0.html">
-        <div class="story-image" style="background-image: url('GS.png');"></div>
+        <div class="story-image" style="background-image: url('FD.png');"></div>
         <div class="story-text">
           <div class="story-title">Future Destiny</div>
           <div class="story-epilog">"Kalau Cinta Itu Bisa Bicara, Aku Udah Ngomong Sama Kamu Dari Dulu."</div>
@@ -187,7 +199,16 @@
         <div class="story-image" style="background-image: url('CS.png');"></div>
         <div class="story-text">
           <div class="story-title">Cesyandika</div>
-          <div class="story-epilog">"Senyuman Itu Masih Sama, Dan Aku Juga Masih Menyukainya."</div>
+          <div class="story-epilog">"Senyumannya Masih Sama, Dan Aku Juga Masih Menyukainya."</div>
+        </div>
+      </a>
+
+      <!-- Panel 3 -->
+      <a class="story-panel panel-green" href="ManusiaPerasa.html">
+        <div class="story-image" style="background-image: url('MPB.png');"></div>
+        <div class="story-text">
+          <div class="story-title">Manusia Perasa</div>
+          <div class="story-epilog">"Barangkali, setiap rasa adalah cara Tuhan mengajarkan kita menjadi manusia."</div>
         </div>
       </a>
 
