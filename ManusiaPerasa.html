@@ -1075,6 +1075,22 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+  
+/* PERBAIKAN AREA KLIK TOMBOL MULAI MEMBACA */
+
+.read-panel::before,
+.read-panel::after {
+  pointer-events: none;
+}
+
+.read-button {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+  
 </style>
 </head>
 
